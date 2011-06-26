@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<map>
+	<backgroundColor>#cccccc</backgroundColor>
+	<center>
+		<latitude>53.90866</latitude>
+		<longitude>27.57509</longitude>
+	</center>
+	<disableDefaultUI>0</disableDefaultUI>
+	<disableDoubleClickZoom>0</disableDoubleClickZoom>
+	<draggable>1</draggable>
+	<draggableCursor></draggableCursor>
+	<draggingCursor></draggingCursor>
+	<keyboardShortcuts>1</keyboardShortcuts>
+	<mapTypeControl>1</mapTypeControl>
+	<mapTypeControlOptions>
+		<mapTypeIds>
+			<mapTypeId>HYBRID</mapTypeId>
+			<mapTypeId>ROADMAP</mapTypeId>
+			<mapTypeId>SATELLITE</mapTypeId>
+			<mapTypeId>TERRAIN</mapTypeId>
+		</mapTypeIds>
+		<position>TOP_RIGHT</position>
+		<style>DEFAULT</style>
+	</mapTypeControlOptions>
+	<mapTypeId>HYBRID</mapTypeId>
+	<maxZoom></maxZoom>
+	<minZoom></minZoom>
+	<noClear>1</noClear>
+	<panControl>1</panControl>
+	<panControlOptions>
+		<position>TOP_LEFT</position>
+	</panControlOptions>
+	<scaleControl>1</scaleControl>
+	<scaleControlOptions>
+		<position>BOTTOM_LEFT</position>
+		<style>DEFAULT</style>
+	</scaleControlOptions>
+	<scrollwheel>1</scrollwheel>
+	<zoom>7</zoom>
+	<zoomControl>1</zoomControl>
+	<zoomControlOptions>
+		<position>TOP_LEFT</position>
+		<style>DEFAULT</style>
+	</zoomControlOptions>
+</map>

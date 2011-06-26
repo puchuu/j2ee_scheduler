@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<transports>
+	<transport id="1">
+		<from>
+			<latitude>53.888963</latitude>
+			<longitude>27.566071</longitude>
+		</from>
+		<to>
+			<latitude>53.150888</latitude>
+			<longitude>29.240112</longitude>
+		</to>
+		<number>38</number>
+		<type>автобус</type>
+		<start>05:00:00</start>
+		<end>23:00:00</end>
+		<spend>01:10:00</spend>
+		<period>00:00:20</period>
+	</transport>
+	<transport id="2">
+		<from>
+			<latitude>53.581092</latitude>
+			<longitude>25.812378</longitude>
+		</from>
+		<to>
+			<latitude>55.634198</latitude>
+			<longitude>27.040100</longitude>
+		</to>
+		<number>1</number>
+		<type>трамвай</type>
+		<start>04:30:00</start>
+		<end>24:00:00</end>
+		<spend>00:50:00</spend>
+		<period>00:00:10</period>
+	</transport>
+	<transport id="3">
+		<from>
+			<latitude>52.409121</latitude>
+			<longitude>23.807373</longitude>
+		</from>
+		<to>
+			<latitude>53.893617</latitude>
+			<longitude>30.329475</longitude>
+		</to>
+		<number>1450</number>
+		<type>маршрутка</type>
+		<start>06:30:00</start>
+		<end>22:00:00</end>
+		<spend>00:40:00</spend>
+		<period>00:00:15</period>
+	</transport>
+</transports>

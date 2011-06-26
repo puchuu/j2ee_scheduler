@@ -1,0 +1,37 @@
+{
+	"/view/data/transports":               "view.Transports",
+	
+	"/admin/image_upload":                 "admin.ImageUploader",
+
+	"/admin/":                             "admin.Index",
+	"/admin/login":                        "admin.Login",
+	"/admin/login_action":                 "admin.LoginAction",
+	"/admin/create":                       "admin.Create",
+	"/admin/create_action":                "admin.CreateAction",
+	"/admin/logout":                       "admin.Logout",
+	"/admin/view":                         "admin.View",
+	"/admin/change":                       "admin.Change",
+	"/admin/change_action":                "admin.ChangeAction",
+	"/admin/delete_action":                "admin.DeleteAction",
+	
+	"/admin/place/change":                 "admin.place.Change",
+	"/admin/place/change_action":          "admin.place.ChangeAction",
+	"/admin/place/create":                 "admin.place.Create",
+	"/admin/place/create_action":          "admin.place.CreateAction",
+	"/admin/place/delete_action":          "admin.place.DeleteAction",
+	"/admin/place/view":                   "admin.place.View",
+	
+	"/admin/transport_type/change":        "admin.transport_type.Change",
+	"/admin/transport_type/change_action": "admin.transport_type.ChangeAction",
+	"/admin/transport_type/create":        "admin.transport_type.Create",
+	"/admin/transport_type/create_action": "admin.transport_type.CreateAction",
+	"/admin/transport_type/view":          "admin.transport_type.View",
+	"/admin/transport_type/delete_action": "admin.transport_type.DeleteAction",
+	
+	"/admin/transport/change":				"admin.transport.Change",
+	"/admin/transport/change_action":		"admin.transport.ChangeAction",
+	"/admin/transport/create":				"admin.transport.Create",
+	"/admin/transport/create_action":		"admin.transport.CreateAction",
+	"/admin/transport/view":				"admin.transport.View",
+	"/admin/transport/delete_action":		"admin.transport.DeleteAction"
+}

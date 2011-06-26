@@ -1,0 +1,143 @@
+-- MySQL dump 10.13  Distrib 5.5.8, for Win32 (x86)
+--
+-- Host: localhost    Database: scheduler
+-- ------------------------------------------------------
+-- Server version	5.5.8
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `admins`
+--
+
+DROP TABLE IF EXISTS `admins`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `admins` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `email` tinytext NOT NULL,
+  `name` tinytext NOT NULL,
+  `login` tinytext NOT NULL,
+  `password` varchar(32) NOT NULL,
+  `salt` varchar(32) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `admins`
+--
+
+LOCK TABLES `admins` WRITE;
+/*!40000 ALTER TABLE `admins` DISABLE KEYS */;
+INSERT INTO `admins` VALUES (1,'puchuu@puchuu.by','puchuu','puchuu','cf28faae34aa5a70ae926893eecc989a','f81c1bdafd1c168c295ee1b58c0c6076'),(4,'admin@asd.by','admin','admin','3c09b2da9b1ffc0cc6cde0f075a617df','832e14eb69b87bab82151ee5eec7c926');
+/*!40000 ALTER TABLE `admins` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `places`
+--
+
+DROP TABLE IF EXISTS `places`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `places` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` tinytext NOT NULL,
+  `image` tinytext,
+  `latitude` double NOT NULL,
+  `longitude` double NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `places`
+--
+
+LOCK TABLES `places` WRITE;
+/*!40000 ALTER TABLE `places` DISABLE KEYS */;
+INSERT INTO `places` VALUES (21,'Гомель','/static/upload/66038e78e9624bd5076752ae4fe1dd12.jpg',52.42165420237587,30.990978311523463),(20,'Брест','/static/upload/a2de7f8bb264af5fb91fb7bc6361c108.jpg',52.0946635607223,23.6651573886719),(19,'Минск','/static/upload/be9abc8867bef6e710168ffd718a573d.jpg',53.886504959076795,27.530284952148463),(22,'Витебск','/static/upload/c237694e675c60497db5ef1640205104.jpg',55.18432721688064,30.175243448242213);
+/*!40000 ALTER TABLE `places` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `transport_types`
+--
+
+DROP TABLE IF EXISTS `transport_types`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `transport_types` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` tinytext NOT NULL,
+  `image` tinytext,
+  `speed` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `transport_types`
+--
+
+LOCK TABLES `transport_types` WRITE;
+/*!40000 ALTER TABLE `transport_types` DISABLE KEYS */;
+INSERT INTO `transport_types` VALUES (4,'трамвай','/static/upload/658f77c98697d0566080fc497ef1f4ab.jpg',30),(5,'автобус','/static/upload/26fc22bb87390a4b35e3737bc6a3db56.jpg',40),(6,'троллейбус','/static/upload/0843eb6ff3cfc0fb18d83affb936e415.jpg',40),(10,'метро','/static/upload/a023570f6d3ae1ec40c169ad21241793.jpeg',80),(12,'поезд','/static/upload/6fc215593d03e3169a7f0dc8c356577d.jpg',120);
+/*!40000 ALTER TABLE `transport_types` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `transports`
+--
+
+DROP TABLE IF EXISTS `transports`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `transports` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `from_place_id` int(10) unsigned NOT NULL,
+  `to_place_id` int(10) unsigned NOT NULL,
+  `start` time NOT NULL,
+  `end` time NOT NULL,
+  `spend` time NOT NULL,
+  `period` time NOT NULL,
+  `image` tinytext,
+  `transport_type_id` int(10) unsigned NOT NULL,
+  `number` int(5) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `from_place_id` (`from_place_id`),
+  KEY `to_place_id` (`to_place_id`),
+  KEY `transport_type_id` (`transport_type_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `transports`
+--
+
+LOCK TABLES `transports` WRITE;
+/*!40000 ALTER TABLE `transports` DISABLE KEYS */;
+INSERT INTO `transports` VALUES (9,21,20,'07:46:22','11:36:49','07:34:15','02:13:17','/static/upload/aaa4e0c2684647f8b0bbf6677e7d29dc.jpg',4,12),(10,21,19,'12:21:43','06:32:19','08:47:21','04:32:25','/static/upload/c8640bf9788f64f8f32b7e26867a5f2f.jpg',4,56),(11,21,22,'07:14:29','14:44:22','07:38:22','06:43:19','/static/upload/590e9d453e0a9263898b54c9653fc0bc.jpg',4,67),(12,19,20,'05:46:20','02:13:35','13:10:28','07:38:19','/static/upload/8f0af3eb8745a487c9f08b8a6584e92b.jpg',4,87),(13,19,22,'04:35:25','12:20:41','12:19:43','06:33:18','/static/upload/92229ae78f6fd1591ab4a1dac8b1e41e.jpg',4,656);
+/*!40000 ALTER TABLE `transports` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2011-06-26 22:04:16
